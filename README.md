@@ -10,4 +10,12 @@ Includes:
 
 ## Usage
 
-`npm run dev`
+```
+git clone https://github.com/dlcmh/sapper-authentication-demo
+cd sapper-authentication-demo
+pnpm i
+cd backend
+pnpm i
+cd ..
+npm run dev
+```
