@@ -1,13 +1,10 @@
 'use strict';
 
 const { promisify } = require('util');
-const plugin = require('hapi-auth-jwt2');
 const jwt = require('jsonwebtoken');
 
 const sign = promisify(jwt.sign);
 const seed = 'some-totally-secret-string';
-
-exports.plugin = plugin;
 
 exports.strategy = {
   type: 'jwt',

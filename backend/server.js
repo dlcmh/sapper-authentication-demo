@@ -1,7 +1,8 @@
 'use strict';
 
+const { strategy } = require('./auth');
+const auth_jwt_plugin = require('hapi-auth-jwt2');
 const Hapi = require('@hapi/hapi');
-const { strategy, plugin } = require('./auth');
 const routes = require('./routes');
 
 const init = async () => {
@@ -15,7 +16,7 @@ const init = async () => {
     host: 'localhost',
   });
 
-  await server.register(plugin);
+  await server.register(auth_jwt_plugin);
   const { type, name, config } = strategy;
   server.auth.strategy(type, name, config);
 
